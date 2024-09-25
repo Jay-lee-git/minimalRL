@@ -10,6 +10,9 @@ learning_rate = 0.0002
 # learning_rate = 0.002
 gamma         = 0.98
 
+import wandb
+
+
 class Policy(nn.Module):
     def __init__(self):
         super(Policy, self).__init__()
@@ -34,19 +37,34 @@ class Policy(nn.Module):
         self.optimizer.zero_grad() # 이전에 계산된 기울기 초기화
         for r, prob in self.data[::-1]: # 데이터를 뒤에서 부터 본다, 맨 뒤는 gamma가 50^이여야하기 때문
             R = r + gamma * R
-            loss += -torch.log(prob) * R # log_\pi(s,a) * Reward
-        loss.backward() # gradient 계산(backpropagation)
+            loss = -torch.log(prob) * R # log_\pi(s,a) * Reward
+            loss.backward() # gradient 계산(backpropagation)
         self.optimizer.step()
         self.data = []
 
+
+import os
+
 def main():
+    epochs = 2000
+    wandb.init(
+        project="Pangyo_RL_Tuto",
+        name=os.path.basename(__file__), # 이 파일이름을 run name으로 지정
+        # id="<run-id>",
+        config={
+        "learning_rate": learning_rate,
+        "architecture": "CNN",
+        "epochs": epochs,
+        }
+    )
+
     env = gym.make('CartPole-v1')
     pi = Policy()
     score = 0.0
     print_interval = 20
     
     
-    for n_epi in range(5000):
+    for n_epi in range(epochs):
         s, _ = env.reset() 
         # s = [cart pos, cart vel, pole ang, pole vel]
         done = False
@@ -66,9 +84,12 @@ def main():
         pi.train_net()
         
         if n_epi%print_interval==0 and n_epi!=0:
+            wandb.log({"avg_score":score/print_interval})
             print("# of episode :{}, avg score : {}".format(n_epi, score/print_interval))
             # 평균 20스탭동안 평균 몇틱을 버텼다라는 뜻
             score = 0.0
+            
+    wandb.finish()
     env.close()
     
 if __name__ == '__main__':
