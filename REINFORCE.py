@@ -30,11 +30,12 @@ class Policy(nn.Module):
         
     def train_net(self):
         R = 0
+        loss = 0
         self.optimizer.zero_grad() # 이전에 계산된 기울기 초기화
         for r, prob in self.data[::-1]: # 데이터를 뒤에서 부터 본다, 맨 뒤는 gamma가 50^이여야하기 때문
             R = r + gamma * R
-            loss = -torch.log(prob) * R # log_\pi(s,a) * Reward
-            loss.backward() # gradient 계산(backpropagation)
+            loss += -torch.log(prob) * R # log_\pi(s,a) * Reward
+        loss.backward() # gradient 계산(backpropagation)
         self.optimizer.step()
         self.data = []
 
@@ -45,7 +46,7 @@ def main():
     print_interval = 20
     
     
-    for n_epi in range(1000):
+    for n_epi in range(5000):
         s, _ = env.reset() 
         # s = [cart pos, cart vel, pole ang, pole vel]
         done = False
