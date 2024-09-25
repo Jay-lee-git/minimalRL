@@ -8,7 +8,7 @@ from torch.distributions import Categorical
 #Hyperparameters
 learning_rate = 0.0002
 gamma         = 0.98
-n_rollout     = 10
+n_rollout     = 10 #학습할 데이터를 수집하기 위한 스텝 수
 
 class ActorCritic(nn.Module):
     def __init__(self):
@@ -40,7 +40,7 @@ class ActorCritic(nn.Module):
             s,a,r,s_prime,done = transition
             s_lst.append(s)
             a_lst.append([a])
-            r_lst.append([r/100.0])
+            r_lst.append([r/100.0]) # why 100? not 4/len(r_lst)?
             s_prime_lst.append(s_prime)
             done_mask = 0.0 if done else 1.0
             done_lst.append([done_mask])
@@ -57,20 +57,30 @@ class ActorCritic(nn.Module):
         delta = td_target - self.v(s)
         
         pi = self.pi(s, softmax_dim=1)
-        pi_a = pi.gather(1,a)
+        pi_a = pi.gather(1,a) # action에 따른 확률을 추출 
         loss = -torch.log(pi_a) * delta.detach() + F.smooth_l1_loss(self.v(s), td_target.detach())
 
+
         self.optimizer.zero_grad()
-        loss.mean().backward()
-        self.optimizer.step()         
-      
+        loss.mean().backward() # 그라디언트 계산
+        self.optimizer.step() # 그라디언트 업데이트
+import wandb
+import os
 def main():  
-    env = gym.make('CartPole-v1')
+    env = gym.make('CartPole-v1', render_mode='rgb_array')
     model = ActorCritic()    
     print_interval = 20
     score = 0.0
+    wandb.init(
+        project="Pangyo_RL_Tuto",
+        name=os.path.basename(__file__), # 이 파일이름을 run name으로 지정
+        # id="<run-id>",
+        config={
+        "learning_rate": learning_rate,
+        }
+    )    
 
-    for n_epi in range(10000):
+    for n_epi in range(2000):
         done = False
         s, _ = env.reset()
         while not done:
@@ -84,12 +94,16 @@ def main():
                 s = s_prime
                 score += r
                 
+                if n_epi > 100:  # 1000 에피소드 이후부터 render 실행
+                    env.render()
+
                 if done:
                     break                     
             
             model.train_net()
             
         if n_epi%print_interval==0 and n_epi!=0:
+            wandb.log({"avg_score":score/print_interval})
             print("# of episode :{}, avg score : {:.1f}".format(n_epi, score/print_interval))
             score = 0.0
     env.close()
