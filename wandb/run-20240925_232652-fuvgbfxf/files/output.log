@@ -1,0 +1,80 @@
+/home/krm-demo/miniconda3/envs/rl_tuto/lib/python3.8/site-packages/gym/utils/passive_env_checker.py:233: DeprecationWarning: `np.bool8` is a deprecated alias for `np.bool_`.  (Deprecated NumPy 1.24)
+  if not isinstance(terminated, (bool, np.bool8)):
+# of episode :20, avg score : 33.3
+# of episode :40, avg score : 27.05
+# of episode :60, avg score : 25.55
+# of episode :80, avg score : 42.2
+# of episode :100, avg score : 29.5
+# of episode :120, avg score : 26.75
+# of episode :140, avg score : 33.95
+# of episode :160, avg score : 29.85
+# of episode :180, avg score : 31.1
+# of episode :200, avg score : 29.35
+# of episode :220, avg score : 38.15
+# of episode :240, avg score : 41.65
+# of episode :260, avg score : 34.75
+# of episode :280, avg score : 42.25
+# of episode :300, avg score : 46.95
+# of episode :320, avg score : 40.3
+# of episode :340, avg score : 39.2
+# of episode :360, avg score : 45.6
+# of episode :380, avg score : 45.0
+# of episode :400, avg score : 58.85
+# of episode :420, avg score : 54.0
+# of episode :440, avg score : 44.3
+# of episode :460, avg score : 54.25
+# of episode :480, avg score : 44.05
+# of episode :500, avg score : 58.0
+# of episode :520, avg score : 52.9
+# of episode :540, avg score : 58.35
+# of episode :560, avg score : 48.5
+# of episode :580, avg score : 65.7
+# of episode :600, avg score : 76.35
+# of episode :620, avg score : 74.05
+# of episode :640, avg score : 64.25
+# of episode :660, avg score : 72.3
+# of episode :680, avg score : 78.85
+# of episode :700, avg score : 70.1
+# of episode :720, avg score : 102.1
+# of episode :740, avg score : 117.4
+# of episode :760, avg score : 114.2
+# of episode :780, avg score : 105.5
+# of episode :800, avg score : 117.8
+# of episode :820, avg score : 126.8
+# of episode :840, avg score : 148.4
+# of episode :860, avg score : 126.85
+# of episode :880, avg score : 138.05
+# of episode :900, avg score : 133.5
+# of episode :920, avg score : 121.3
+# of episode :940, avg score : 134.45
+# of episode :960, avg score : 152.7
+# of episode :980, avg score : 165.7
+# of episode :1000, avg score : 136.2
+# of episode :1020, avg score : 150.8
+# of episode :1040, avg score : 161.3
+# of episode :1060, avg score : 137.95
+# of episode :1080, avg score : 175.55
+# of episode :1100, avg score : 153.6
+# of episode :1120, avg score : 171.75
+# of episode :1140, avg score : 177.9
+# of episode :1160, avg score : 214.45
+# of episode :1180, avg score : 206.7
+# of episode :1200, avg score : 151.25
+# of episode :1220, avg score : 193.5
+# of episode :1240, avg score : 214.05
+# of episode :1260, avg score : 210.65
+# of episode :1280, avg score : 225.85
+Traceback (most recent call last):
+  File "REINFORCE.py", line 96, in <module>
+    main()
+  File "REINFORCE.py", line 84, in main
+    pi.train_net()
+  File "REINFORCE.py", line 41, in train_net
+    loss.backward() # gradient 계산(backpropagation)
+  File "/home/krm-demo/miniconda3/envs/rl_tuto/lib/python3.8/site-packages/torch/_tensor.py", line 521, in backward
+    torch.autograd.backward(
+  File "/home/krm-demo/miniconda3/envs/rl_tuto/lib/python3.8/site-packages/torch/autograd/__init__.py", line 289, in backward
+    _engine_run_backward(
+  File "/home/krm-demo/miniconda3/envs/rl_tuto/lib/python3.8/site-packages/torch/autograd/graph.py", line 769, in _engine_run_backward
+    return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+KeyboardInterrupt

@@ -1,0 +1,43 @@
+{
+  "os": "Linux-6.8.0-45-generic-x86_64-with-glibc2.17",
+  "python": "3.8.19",
+  "startedAt": "2024-09-25T14:31:56.911Z",
+  "program": "REINFORCE.py",
+  "codePath": "REINFORCE.py",
+  "git": {
+    "remote": "https://Jay-lee-git:@github.com/Jay-lee-git/minimalRL.git",
+    "commit": "8b4a99ee4d241367c002f94ce884aaca2ba66f00"
+  },
+  "email": "jeheelee1@gmail.com",
+  "root": "/home/krm-demo/minimalRL",
+  "host": "krm-demo",
+  "username": "krm-demo",
+  "executable": "/home/krm-demo/miniconda3/envs/rl_tuto/bin/python",
+  "codePathLocal": "REINFORCE.py",
+  "cpu_count": 10,
+  "cpu_count_logical": 16,
+  "gpu": "[NVIDIA GeForce RTX 4060 Laptop GPU]",
+  "gpu_count": 1,
+  "disk": {
+    "/": {
+      "total": "210254073856",
+      "used": "46868623360"
+    }
+  },
+  "memory": {
+    "total": "16456433664"
+  },
+  "cpu": {
+    "count": 10,
+    "countLogical": 16
+  },
+  "gpu_nvidia": [
+    {
+      "name": "NVIDIA GeForce RTX 4060 Laptop GPU",
+      "memoryTotal": "8585740288",
+      "cudaCores": 3072,
+      "architecture": "Ada"
+    }
+  ],
+  "cudaVersion": "12.4"
+}

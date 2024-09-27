@@ -1,0 +1,24 @@
+{"time":"2024-09-25T23:19:13.911435924+09:00","level":"INFO","msg":"using version","core version":"0.18.1"}
+{"time":"2024-09-25T23:19:13.911485397+09:00","level":"INFO","msg":"created symlink","path":"/home/krm-demo/minimalRL/wandb/run-20240925_231913-zb5nkvsr/logs/debug-core.log"}
+{"time":"2024-09-25T23:19:13.911595803+09:00","level":"INFO","msg":"using version","core version":"0.18.1"}
+{"time":"2024-09-25T23:19:13.911606289+09:00","level":"INFO","msg":"created symlink","path":"/home/krm-demo/minimalRL/wandb/run-20240925_231913-zb5nkvsr/logs/debug-core.log"}
+{"time":"2024-09-25T23:19:13.915055266+09:00","level":"INFO","msg":"created new stream","id":"zb5nkvsr"}
+{"time":"2024-09-25T23:19:13.915081889+09:00","level":"INFO","msg":"stream: started","id":"zb5nkvsr"}
+{"time":"2024-09-25T23:19:13.915097973+09:00","level":"INFO","msg":"sender: started","stream_id":{"value":"zb5nkvsr"}}
+{"time":"2024-09-25T23:19:13.915097375+09:00","level":"INFO","msg":"handler: started","stream_id":{"value":"zb5nkvsr"}}
+{"time":"2024-09-25T23:19:13.915083069+09:00","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"zb5nkvsr"}}
+{"time":"2024-09-25T23:19:14.139607124+09:00","level":"ERROR","msg":"HTTP error","status":403,"method":"POST","url":"https://api.wandb.ai/graphql"}
+{"time":"2024-09-25T23:19:14.140006816+09:00","level":"ERROR","msg":"sender: upsertRun:","error":"failed to upsert bucket: returned error 403 Forbidden: {\"errors\":[{\"message\":\"permission denied\",\"path\":[\"upsertBucket\"],\"extensions\":{\"code\":\"PERMISSION_ERROR\"}}],\"data\":{\"upsertBucket\":null}}"}
+{"time":"2024-09-25T23:19:14.273341367+09:00","level":"INFO","msg":"stream: closing","id":"zb5nkvsr"}
+{"time":"2024-09-25T23:19:14.400487792+09:00","level":"ERROR","msg":"HTTP error","status":403,"method":"POST","url":"https://api.wandb.ai/graphql"}
+{"time":"2024-09-25T23:19:14.4006628+09:00","level":"ERROR","msg":"sender: sendConfig:","error":"returned error 403 Forbidden: {\"errors\":[{\"message\":\"permission denied\",\"path\":[\"upsertBucket\"],\"extensions\":{\"code\":\"PERMISSION_ERROR\"}}],\"data\":{\"upsertBucket\":null}}"}
+{"time":"2024-09-25T23:19:14.401838669+09:00","level":"WARN","msg":"No requirements.txt found, not creating job artifact. See https://docs.wandb.ai/guides/launch/create-job"}
+{"time":"2024-09-25T23:19:14.40188236+09:00","level":"INFO","msg":"sender: sendDefer: no job artifact to save"}
+{"time":"2024-09-25T23:19:14.446670748+09:00","level":"ERROR","msg":"HTTP error","status":404,"method":"POST","url":"https://api.wandb.ai/graphql"}
+{"time":"2024-09-25T23:19:14.446819243+09:00","level":"ERROR","msg":"runfiles: CreateRunFiles returned error: returned error 404 Not Found: {\"errors\":[{\"message\":\"project wandbee/Pangyo_RL_Tuto not found during createRunFiles\",\"path\":[\"createRunFiles\"]}],\"data\":{\"createRunFiles\":null}}"}
+{"time":"2024-09-25T23:19:14.576370072+09:00","level":"ERROR","msg":"HTTP error","status":404,"method":"POST","url":"https://api.wandb.ai/graphql"}
+{"time":"2024-09-25T23:19:14.576736285+09:00","level":"ERROR","msg":"runfiles: CreateRunFiles returned error: returned error 404 Not Found: {\"errors\":[{\"message\":\"project wandbee/Pangyo_RL_Tuto not found during createRunFiles\",\"path\":[\"createRunFiles\"]}],\"data\":{\"createRunFiles\":null}}"}
+{"time":"2024-09-25T23:19:14.577036131+09:00","level":"INFO","msg":"handler: closed","stream_id":{"value":"zb5nkvsr"}}
+{"time":"2024-09-25T23:19:14.577144505+09:00","level":"INFO","msg":"sender: closed","stream_id":{"value":"zb5nkvsr"}}
+{"time":"2024-09-25T23:19:14.577148729+09:00","level":"INFO","msg":"writer: Close: closed","stream_id":{"value":"zb5nkvsr"}}
+{"time":"2024-09-25T23:19:14.577358864+09:00","level":"INFO","msg":"stream: closed","id":"zb5nkvsr"}

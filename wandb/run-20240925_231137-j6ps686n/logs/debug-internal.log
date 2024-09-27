@@ -1,0 +1,18 @@
+{"time":"2024-09-25T23:11:37.720085222+09:00","level":"INFO","msg":"using version","core version":"0.18.1"}
+{"time":"2024-09-25T23:11:37.72010669+09:00","level":"INFO","msg":"created symlink","path":"/home/krm-demo/minimalRL/wandb/run-20240925_231137-j6ps686n/logs/debug-core.log"}
+{"time":"2024-09-25T23:11:37.720160694+09:00","level":"INFO","msg":"using version","core version":"0.18.1"}
+{"time":"2024-09-25T23:11:37.720166622+09:00","level":"INFO","msg":"created symlink","path":"/home/krm-demo/minimalRL/wandb/run-20240925_231137-j6ps686n/logs/debug-core.log"}
+{"time":"2024-09-25T23:11:37.72415613+09:00","level":"INFO","msg":"created new stream","id":"j6ps686n"}
+{"time":"2024-09-25T23:11:37.724182203+09:00","level":"INFO","msg":"stream: started","id":"j6ps686n"}
+{"time":"2024-09-25T23:11:37.724189395+09:00","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"j6ps686n"}}
+{"time":"2024-09-25T23:11:37.724200279+09:00","level":"INFO","msg":"sender: started","stream_id":{"value":"j6ps686n"}}
+{"time":"2024-09-25T23:11:37.724223449+09:00","level":"INFO","msg":"handler: started","stream_id":{"value":"j6ps686n"}}
+{"time":"2024-09-25T23:11:38.138256204+09:00","level":"INFO","msg":"wandb-core","!BADKEY":null}
+{"time":"2024-09-25T23:11:38.1394479+09:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-09-25T23:11:45.94537374+09:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-09-25T23:11:45.945507601+09:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-09-25T23:11:49.986834399+09:00","level":"INFO","msg":"stream: closing","id":"j6ps686n"}
+{"time":"2024-09-25T23:11:49.986871856+09:00","level":"INFO","msg":"handler: closed","stream_id":{"value":"j6ps686n"}}
+{"time":"2024-09-25T23:11:49.986909572+09:00","level":"INFO","msg":"sender: closed","stream_id":{"value":"j6ps686n"}}
+{"time":"2024-09-25T23:11:49.986913103+09:00","level":"INFO","msg":"writer: Close: closed","stream_id":{"value":"j6ps686n"}}
+{"time":"2024-09-25T23:11:49.987027056+09:00","level":"INFO","msg":"stream: closed","id":"j6ps686n"}

@@ -1,0 +1,18 @@
+{"time":"2024-09-25T23:20:37.266762283+09:00","level":"INFO","msg":"using version","core version":"0.18.1"}
+{"time":"2024-09-25T23:20:37.266790139+09:00","level":"INFO","msg":"created symlink","path":"/home/krm-demo/minimalRL/wandb/run-20240925_232037-<run-id>/logs/debug-core.log"}
+{"time":"2024-09-25T23:20:37.266858459+09:00","level":"INFO","msg":"using version","core version":"0.18.1"}
+{"time":"2024-09-25T23:20:37.266864672+09:00","level":"INFO","msg":"created symlink","path":"/home/krm-demo/minimalRL/wandb/run-20240925_232037-<run-id>/logs/debug-core.log"}
+{"time":"2024-09-25T23:20:37.269527304+09:00","level":"INFO","msg":"created new stream","id":"<run-id>"}
+{"time":"2024-09-25T23:20:37.269552093+09:00","level":"INFO","msg":"stream: started","id":"<run-id>"}
+{"time":"2024-09-25T23:20:37.269562365+09:00","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"<run-id>"}}
+{"time":"2024-09-25T23:20:37.269588842+09:00","level":"INFO","msg":"handler: started","stream_id":{"value":"<run-id>"}}
+{"time":"2024-09-25T23:20:37.269582823+09:00","level":"INFO","msg":"sender: started","stream_id":{"value":"<run-id>"}}
+{"time":"2024-09-25T23:20:37.941955791+09:00","level":"INFO","msg":"wandb-core","!BADKEY":null}
+{"time":"2024-09-25T23:20:37.942525535+09:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-09-25T23:20:45.093454857+09:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-09-25T23:20:45.093602119+09:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-09-25T23:20:46.991864247+09:00","level":"INFO","msg":"stream: closing","id":"<run-id>"}
+{"time":"2024-09-25T23:20:46.991910251+09:00","level":"INFO","msg":"handler: closed","stream_id":{"value":"<run-id>"}}
+{"time":"2024-09-25T23:20:46.991948118+09:00","level":"INFO","msg":"writer: Close: closed","stream_id":{"value":"<run-id>"}}
+{"time":"2024-09-25T23:20:46.99196299+09:00","level":"INFO","msg":"sender: closed","stream_id":{"value":"<run-id>"}}
+{"time":"2024-09-25T23:20:46.992176065+09:00","level":"INFO","msg":"stream: closed","id":"<run-id>"}

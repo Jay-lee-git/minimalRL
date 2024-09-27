@@ -1,0 +1,28 @@
+2024-09-25 23:19:43,394 INFO    MainThread:15486 [wandb_setup.py:_flush():77] Current SDK version is 0.18.1
+2024-09-25 23:19:43,394 INFO    MainThread:15486 [wandb_setup.py:_flush():77] Configure stats pid to 15486
+2024-09-25 23:19:43,394 INFO    MainThread:15486 [wandb_setup.py:_flush():77] Loading settings from /home/krm-demo/.config/wandb/settings
+2024-09-25 23:19:43,394 INFO    MainThread:15486 [wandb_setup.py:_flush():77] Loading settings from /home/krm-demo/minimalRL/wandb/settings
+2024-09-25 23:19:43,394 INFO    MainThread:15486 [wandb_setup.py:_flush():77] Loading settings from environment variables: {}
+2024-09-25 23:19:43,394 INFO    MainThread:15486 [wandb_setup.py:_flush():77] Applying setup settings: {'mode': None, '_disable_service': None}
+2024-09-25 23:19:43,394 INFO    MainThread:15486 [wandb_setup.py:_flush():77] Inferring run settings from compute environment: {'program_relpath': 'REINFORCE.py', 'program_abspath': '/home/krm-demo/minimalRL/REINFORCE.py', 'program': 'REINFORCE.py'}
+2024-09-25 23:19:43,394 INFO    MainThread:15486 [wandb_setup.py:_flush():77] Applying login settings: {}
+2024-09-25 23:19:43,394 INFO    MainThread:15486 [wandb_init.py:_log_setup():532] Logging user logs to /home/krm-demo/minimalRL/wandb/run-20240925_231943-5mezsoz2/logs/debug.log
+2024-09-25 23:19:43,394 INFO    MainThread:15486 [wandb_init.py:_log_setup():533] Logging internal logs to /home/krm-demo/minimalRL/wandb/run-20240925_231943-5mezsoz2/logs/debug-internal.log
+2024-09-25 23:19:43,394 INFO    MainThread:15486 [wandb_init.py:init():616] calling init triggers
+2024-09-25 23:19:43,394 INFO    MainThread:15486 [wandb_init.py:init():623] wandb.init called with sweep_config: {}
+config: {'learning_rate': 0.0002, 'architecture': 'CNN', 'epochs': 100}
+2024-09-25 23:19:43,394 INFO    MainThread:15486 [wandb_init.py:init():666] starting backend
+2024-09-25 23:19:43,394 INFO    MainThread:15486 [wandb_init.py:init():670] setting up manager
+2024-09-25 23:19:43,396 INFO    MainThread:15486 [backend.py:_multiprocessing_setup():105] multiprocessing start_methods=fork,spawn,forkserver, using: spawn
+2024-09-25 23:19:43,397 INFO    MainThread:15486 [wandb_init.py:init():678] backend started and connected
+2024-09-25 23:19:43,406 INFO    MainThread:15486 [wandb_init.py:init():773] updated telemetry
+2024-09-25 23:19:43,426 INFO    MainThread:15486 [wandb_init.py:init():806] communicating run to backend with 90.0 second timeout
+2024-09-25 23:19:43,635 ERROR   MainThread:15486 [wandb_init.py:init():832] encountered error: failed to upsert bucket: returned error 403 Forbidden: {"errors":[{"message":"permission denied","path":["upsertBucket"],"extensions":{"code":"PERMISSION_ERROR"}}],"data":{"upsertBucket":null}}
+2024-09-25 23:19:43,636 ERROR   MainThread:15486 [wandb_init.py:init():1251] error in wandb.init()
+Traceback (most recent call last):
+  File "/home/krm-demo/miniconda3/envs/rl_tuto/lib/python3.8/site-packages/wandb/sdk/wandb_init.py", line 1241, in init
+    return wi.init()
+  File "/home/krm-demo/miniconda3/envs/rl_tuto/lib/python3.8/site-packages/wandb/sdk/wandb_init.py", line 838, in init
+    raise error
+wandb.errors.CommError: failed to upsert bucket: returned error 403 Forbidden: {"errors":[{"message":"permission denied","path":["upsertBucket"],"extensions":{"code":"PERMISSION_ERROR"}}],"data":{"upsertBucket":null}}
+2024-09-25 23:19:43,771 WARNING MsgRouterThr:15486 [router.py:message_loop():77] message_loop has been closed

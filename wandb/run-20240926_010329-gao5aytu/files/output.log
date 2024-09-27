@@ -1,0 +1,9 @@
+/home/krm-demo/miniconda3/envs/rl_tuto/lib/python3.8/site-packages/gym/utils/passive_env_checker.py:233: DeprecationWarning: `np.bool8` is a deprecated alias for `np.bool_`.  (Deprecated NumPy 1.24)
+  if not isinstance(terminated, (bool, np.bool8)):
+actor_critic.py:48: UserWarning: Creating a tensor from a list of numpy.ndarrays is extremely slow. Please consider converting the list to a single numpy.ndarray with numpy.array() before converting to a tensor. (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:278.)
+  s_batch, a_batch, r_batch, s_prime_batch, done_batch = torch.tensor(s_lst, dtype=torch.float), torch.tensor(a_lst), \
+# of episode :20, avg score : 21.9
+# of episode :40, avg score : 20.4
+# of episode :60, avg score : 19.2
+# of episode :80, avg score : 21.8
+# of episode :100, avg score : 27.6

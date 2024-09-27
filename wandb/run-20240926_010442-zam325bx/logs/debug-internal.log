@@ -1,0 +1,11 @@
+{"time":"2024-09-26T01:04:42.771816691+09:00","level":"INFO","msg":"using version","core version":"0.18.1"}
+{"time":"2024-09-26T01:04:42.771833339+09:00","level":"INFO","msg":"created symlink","path":"/home/krm-demo/minimalRL/wandb/run-20240926_010442-zam325bx/logs/debug-core.log"}
+{"time":"2024-09-26T01:04:42.771881051+09:00","level":"INFO","msg":"using version","core version":"0.18.1"}
+{"time":"2024-09-26T01:04:42.771885533+09:00","level":"INFO","msg":"created symlink","path":"/home/krm-demo/minimalRL/wandb/run-20240926_010442-zam325bx/logs/debug-core.log"}
+{"time":"2024-09-26T01:04:42.773815467+09:00","level":"INFO","msg":"created new stream","id":"zam325bx"}
+{"time":"2024-09-26T01:04:42.773832687+09:00","level":"INFO","msg":"stream: started","id":"zam325bx"}
+{"time":"2024-09-26T01:04:42.773840729+09:00","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"zam325bx"}}
+{"time":"2024-09-26T01:04:42.773854483+09:00","level":"INFO","msg":"handler: started","stream_id":{"value":"zam325bx"}}
+{"time":"2024-09-26T01:04:42.773844796+09:00","level":"INFO","msg":"sender: started","stream_id":{"value":"zam325bx"}}
+{"time":"2024-09-26T01:04:43.077875832+09:00","level":"INFO","msg":"wandb-core","!BADKEY":null}
+{"time":"2024-09-26T01:04:43.078577102+09:00","level":"INFO","msg":"Starting system monitor"}

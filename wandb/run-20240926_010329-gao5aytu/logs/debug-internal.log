@@ -1,0 +1,11 @@
+{"time":"2024-09-26T01:03:29.050693999+09:00","level":"INFO","msg":"using version","core version":"0.18.1"}
+{"time":"2024-09-26T01:03:29.050701031+09:00","level":"INFO","msg":"created symlink","path":"/home/krm-demo/minimalRL/wandb/run-20240926_010329-gao5aytu/logs/debug-core.log"}
+{"time":"2024-09-26T01:03:29.050718933+09:00","level":"INFO","msg":"using version","core version":"0.18.1"}
+{"time":"2024-09-26T01:03:29.050720502+09:00","level":"INFO","msg":"created symlink","path":"/home/krm-demo/minimalRL/wandb/run-20240926_010329-gao5aytu/logs/debug-core.log"}
+{"time":"2024-09-26T01:03:29.05305485+09:00","level":"INFO","msg":"created new stream","id":"gao5aytu"}
+{"time":"2024-09-26T01:03:29.0530745+09:00","level":"INFO","msg":"stream: started","id":"gao5aytu"}
+{"time":"2024-09-26T01:03:29.053104559+09:00","level":"INFO","msg":"sender: started","stream_id":{"value":"gao5aytu"}}
+{"time":"2024-09-26T01:03:29.053103999+09:00","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"gao5aytu"}}
+{"time":"2024-09-26T01:03:29.053134928+09:00","level":"INFO","msg":"handler: started","stream_id":{"value":"gao5aytu"}}
+{"time":"2024-09-26T01:03:29.574413255+09:00","level":"INFO","msg":"wandb-core","!BADKEY":null}
+{"time":"2024-09-26T01:03:29.575007028+09:00","level":"INFO","msg":"Starting system monitor"}

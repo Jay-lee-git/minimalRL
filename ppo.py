@@ -9,9 +9,9 @@ from torch.distributions import Categorical
 learning_rate = 0.0005
 gamma         = 0.98
 lmbda         = 0.95
-eps_clip      = 0.1
-K_epoch       = 3
-T_horizon     = 20
+eps_clip      = 0.1 # clipping
+K_epoch       = 3 # 20번 스탭동안 얻은 데이터를 3번 반복 학습하는 것
+T_horizon     = 20 
 
 class PPO(nn.Module):
     def __init__(self):
@@ -23,7 +23,7 @@ class PPO(nn.Module):
         self.fc_v  = nn.Linear(256,1)
         self.optimizer = optim.Adam(self.parameters(), lr=learning_rate)
 
-    def pi(self, x, softmax_dim = 0):
+    def pi(self, x, softmax_dim = 0): # batch 처리를 위한 softmax_dim 추가
         x = F.relu(self.fc1(x))
         x = self.fc_pi(x)
         prob = F.softmax(x, dim=softmax_dim)
@@ -60,6 +60,8 @@ class PPO(nn.Module):
         s, a, r, s_prime, done_mask, prob_a = self.make_batch()
 
         for i in range(K_epoch):
+            # batch 처리를 하기 위한 트릭
+            # v 호출은 네트워크를 사용하기 때문에 비싸서 batch처리로 한다
             td_target = r + gamma * self.v(s_prime) * done_mask
             delta = td_target - self.v(s)
             delta = delta.detach().numpy()
@@ -73,12 +75,17 @@ class PPO(nn.Module):
             advantage = torch.tensor(advantage_lst, dtype=torch.float)
 
             pi = self.pi(s, softmax_dim=1)
-            pi_a = pi.gather(1,a)
-            ratio = torch.exp(torch.log(pi_a) - torch.log(prob_a))  # a/b == exp(log(a)-log(b))
-
+            pi_a = pi.gather(1,a) # 실제 했던 action 들
+            
+            # 확률 비율(probability ratio) r_t(\theta) 을 구하기 위한 계산
+            ratio = torch.exp(torch.log(pi_a) - torch.log(prob_a))  # a/b == exp(log(a)-log(b)). 나누기가 아닌 log 나누기로 할 시 큰수에 대해 더 효율적이다
+            
             surr1 = ratio * advantage
             surr2 = torch.clamp(ratio, 1-eps_clip, 1+eps_clip) * advantage
             loss = -torch.min(surr1, surr2) + F.smooth_l1_loss(self.v(s) , td_target.detach())
+            # td_target.detach()를 하지 않으면 v(s)에 가깝게 업데이트가 진행되어 이상해진다
+                # 안붙였을떄  v(s) ---수렴---> td_target ---수렴---> v(s) : 사실상 2번 v(s)가 업데이트 됨
+                # 붙였을떄 v(s) ---수렴---> td_target : v(s)가 원하는대로 1번 업데이트 됨
 
             self.optimizer.zero_grad()
             loss.mean().backward()
@@ -90,17 +97,18 @@ def main():
     score = 0.0
     print_interval = 20
 
-    for n_epi in range(10000):
+    for n_epi in range(2000):
         s, _ = env.reset()
         done = False
         while not done:
-            for t in range(T_horizon):
+            for t in range(T_horizon): # T step만큼만 데이터를 모은다
                 prob = model.pi(torch.from_numpy(s).float())
                 m = Categorical(prob)
                 a = m.sample().item()
                 s_prime, r, done, truncated, info = env.step(a)
 
                 model.put_data((s, a, r/100.0, s_prime, prob[a].item(), done))
+                # prob[a].item(): 실제 내가 했던 액션에 대한 확률 값. PPO ratio의 old policy 비율에 쓰인다
                 s = s_prime
 
                 score += r

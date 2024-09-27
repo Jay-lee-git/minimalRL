@@ -1,0 +1,52 @@
+/home/krm-demo/miniconda3/envs/rl_tuto/lib/python3.8/site-packages/gym/utils/passive_env_checker.py:233: DeprecationWarning: `np.bool8` is a deprecated alias for `np.bool_`.  (Deprecated NumPy 1.24)
+  if not isinstance(terminated, (bool, np.bool8)):
+actor_critic.py:48: UserWarning: Creating a tensor from a list of numpy.ndarrays is extremely slow. Please consider converting the list to a single numpy.ndarray with numpy.array() before converting to a tensor. (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:278.)
+  s_batch, a_batch, r_batch, s_prime_batch, done_batch = torch.tensor(s_lst, dtype=torch.float), torch.tensor(a_lst), \
+# of episode :20, avg score : 20.4
+# of episode :40, avg score : 18.7
+# of episode :60, avg score : 19.1
+# of episode :80, avg score : 19.1
+# of episode :100, avg score : 23.8
+# of episode :120, avg score : 22.8
+# of episode :140, avg score : 20.9
+# of episode :160, avg score : 32.8
+# of episode :180, avg score : 27.2
+# of episode :200, avg score : 31.4
+# of episode :220, avg score : 28.6
+# of episode :240, avg score : 27.3
+# of episode :260, avg score : 32.2
+# of episode :280, avg score : 35.8
+# of episode :300, avg score : 32.9
+# of episode :320, avg score : 56.0
+# of episode :340, avg score : 46.4
+# of episode :360, avg score : 55.8
+# of episode :380, avg score : 54.4
+# of episode :400, avg score : 68.3
+# of episode :420, avg score : 48.7
+# of episode :440, avg score : 68.5
+# of episode :460, avg score : 68.5
+# of episode :480, avg score : 90.9
+# of episode :500, avg score : 102.9
+Traceback (most recent call last):
+  File "/home/krm-demo/miniconda3/envs/rl_tuto/lib/python3.8/site-packages/gym/envs/classic_control/cartpole.py", line 219, in render
+    import pygame
+ModuleNotFoundError: No module named 'pygame'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "actor_critic.py", line 112, in <module>
+    main()
+  File "actor_critic.py", line 98, in main
+    env.render()
+  File "/home/krm-demo/miniconda3/envs/rl_tuto/lib/python3.8/site-packages/gym/core.py", line 329, in render
+    return self.env.render(*args, **kwargs)
+  File "/home/krm-demo/miniconda3/envs/rl_tuto/lib/python3.8/site-packages/gym/wrappers/order_enforcing.py", line 51, in render
+    return self.env.render(*args, **kwargs)
+  File "/home/krm-demo/miniconda3/envs/rl_tuto/lib/python3.8/site-packages/gym/wrappers/env_checker.py", line 53, in render
+    return env_render_passive_checker(self.env, *args, **kwargs)
+  File "/home/krm-demo/miniconda3/envs/rl_tuto/lib/python3.8/site-packages/gym/utils/passive_env_checker.py", line 316, in env_render_passive_checker
+    result = env.render(*args, **kwargs)
+  File "/home/krm-demo/miniconda3/envs/rl_tuto/lib/python3.8/site-packages/gym/envs/classic_control/cartpole.py", line 222, in render
+    raise DependencyNotInstalled(
+gym.error.DependencyNotInstalled: pygame is not installed, run `pip install gym[classic_control]`
